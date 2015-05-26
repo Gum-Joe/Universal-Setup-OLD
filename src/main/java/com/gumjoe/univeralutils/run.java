@@ -98,7 +98,5 @@ String s = null;
             e.printStackTrace();
             System.exit(-1);
         }
-// call back
-prompt.prompt();
         }
  }

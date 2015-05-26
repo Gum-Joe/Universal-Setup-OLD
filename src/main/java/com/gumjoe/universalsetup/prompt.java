@@ -1,4 +1,4 @@
-package com.gumjoe.teddyalive;
+package com.gumjoe.universalsetup;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Predicate;

@@ -1,4 +1,4 @@
-package com.gumjoe.teddyalive;
+package com.gumjoe.universalsetup;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Predicate;
@@ -68,14 +68,47 @@ public class setup
         //Starting
         //loading
         System.out.println( "Checking out what we need to do..." );
-	run.run("sed -n '1p' < info.yml");
-	if( run.s=="lang: java"){
-	System.out.println( "Running maven..." );
+	
+    String s = null;
+ 
+       //running the command
+ try {
+             
+        // run the Java file "ps -ef" command
+            // using the Runtime exec method:
+            Process a = Runtime.getRuntime().exec( "sed -n '1p' < info.yml" );
+             
+            BufferedReader stdInput = new BufferedReader(new
+                 InputStreamReader(a.getInputStream()));
+ 
+            BufferedReader stdError = new BufferedReader(new
+                 InputStreamReader(a.getErrorStream()));
+ 
+            // read the output from the command
+           
+            while ((s = stdInput.readLine()) != null) {
+                System.out.println(s);
+            }
+             
+            // read any errors from the attempted command
+            
+            while ((s = stdError.readLine()) != null) {
+                System.out.println(s);
+            }
+             
+        }
+        catch (IOException e) {
+            System.out.println("exception happened - here's what I know: ");
+            e.printStackTrace();
+            System.exit(-1);
+        }
+	if( s=="lang: java"){ 
+    System.out.println( "Running maven..." );
 	run.run("mvn clean install");
 	}
-             
-    }
-
 }
+             
+}
+
 
 

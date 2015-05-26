@@ -1,4 +1,4 @@
-package com.gumjoe.teddyalive;
+package com.gumjoe.universalsetup;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Predicate;
@@ -64,7 +64,7 @@ import com.gumjoe.universalutils.*;
  */
 public class version
 {
-        public static String name = "TeddyAlive";
+        public static String name = "Universal Setup";
         public static String versionnumber = "0.1";
         public static String versiontype = "ALPHA";
         public static String realesetype = "PRE-REALESE";

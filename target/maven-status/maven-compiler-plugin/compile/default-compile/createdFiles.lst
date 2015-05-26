@@ -1,4 +1,2 @@
-com\gumjoe\teddyalive\prompt.class
-com\gumjoe\universalutils\patch.class
-com\gumjoe\universalutils\clone.class
-com\gumjoe\teddyalive\run.class
+com\gumjoe\universalsetup\commandRunner.class
+com\gumjoe\universalsetup\version.class
