@@ -1,0 +1,4 @@
+lang: java
+job: compile
+use: maven3.3.3
+exec: mvn clean install
