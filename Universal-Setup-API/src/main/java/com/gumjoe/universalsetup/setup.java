@@ -75,7 +75,7 @@ public class setup
             System.out.println("[INFO]  >> Files being downloaded from: " + url);
             System.out.println("[INFO]  >> Files being saved to: " + target);
             System.out.println("[INFO]  Setting up Universal-Setup app.null project... >>");
-            System.out.println("[INFO]  << setup type: " + type + " , files located @ " + url );
+            System.out.println("[INFO]  << setup type: " + Setuptype + " , files located @ " + url );
             if(Setuptype=="clone"){
                // Construction: "setup, git, url, target"
                if(FileLoc=="git"){
@@ -86,7 +86,7 @@ public class setup
                    // get.get(url, target);
                }
             }else{
-                if(Setuptype==compile){
+                if(Setuptype=="compile"){
                     System.out.println("[ERROR] info.json does not exit!");
                     System.exit(1);
                 }
@@ -95,7 +95,7 @@ public class setup
             run.run("Setup.sh");
             System.exit(0);
         }
-        if(SetupType=="install"){
+        if(Setuptype=="install"){
             //replace when avalible
             // get.get(url, target);
             // copy.copy(target, installLoc);
