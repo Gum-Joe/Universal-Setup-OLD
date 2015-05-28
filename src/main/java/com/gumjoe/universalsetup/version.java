@@ -64,7 +64,7 @@ import com.gumjoe.universalutils.*;
  */
 public class version
 {
-        public static String name = "Universal Setup";
+        public static String name = "Universal Setup API";
         public static String versionnumber = "0.1";
         public static String versiontype = "ALPHA";
         public static String realesetype = "PRE-REALESE";

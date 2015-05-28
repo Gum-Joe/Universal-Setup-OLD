@@ -61,51 +61,33 @@ import com.gumjoe.universalutils.*;
 
 public class setup
 {
-    public static void main( String[] args ) throws Exception
+    public static void setup( String type, String methodType, String method  ) throws Exception
     {
-        System.out.println( "Welcome to UniversalSetup" );
-        System.out.println( "Running version: " + version.versionnumber + "-" + version.versiontype + "-" + version.realesetype + " on " + System.getProperty( "os.name" ) );
+        System.out.println( version.name + " " + version.versionnumber + "-" + version.versiontype + "-" + version.realesetype );
+        System.out.println( "Setup is starting..." );
         //Starting
         //loading
-        System.out.println( "Checking out what we need to do..." );
-	
-    String s = null;
- 
-       //running the command
- try {
-             
-        // run the Java file "ps -ef" command
-            // using the Runtime exec method:
-            Process a = Runtime.getRuntime().exec( "sed -n '1p' < info.yml" );
-             
-            BufferedReader stdInput = new BufferedReader(new
-                 InputStreamReader(a.getInputStream()));
- 
-            BufferedReader stdError = new BufferedReader(new
-                 InputStreamReader(a.getErrorStream()));
- 
-            // read the output from the command
-           
-            while ((s = stdInput.readLine()) != null) {
-                System.out.println(s);
+	    File info = new File("./info.json");
+        if(!info.exists()){
+            System.out.println("[ERROR] Could not find info.json, using options");
+            System.out.println("[INFO] Setting up Universal-Setup app.null project... >>");
+            System.out.println("[INFO] << using type: " + type );
+            if(type=="git"){
+               
             }
-             
-            // read any errors from the attempted command
-            
-            while ((s = stdError.readLine()) != null) {
-                System.out.println(s);
-            }
-             
+        } else {
+            run.run("Setup.sh");
+            System.exit(0);
         }
-        catch (IOException e) {
-            System.out.println("exception happened - here's what I know: ");
-            e.printStackTrace();
-            System.exit(-1);
+        File src = new File("./src");
+        if(!src.exists()){
+            System.out.println("[COMPILE_INFO] Compiling and installing app to local dir");
+            compile.compile();
+        } else {
+            System.out.println("[INSTALL_INFO] Installing to local dir ./app");
+            install.install();
         }
-	if( s=="lang: java"){ 
-    System.out.println( "Running maven..." );
-	run.run("mvn clean install");
-	}
+    
 }
              
 }

@@ -4,12 +4,49 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gumjoe</groupId>
-    <artifactId>UniversalSetup</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>Universal-Setup-Parent</artifactId>
+    <packaging>pom</packaging>
     <version>0.1-ALPHA-SNAPSHOT</version>
 
-    <name>UniversalSetup</name>
-    <description></description>
+    <name>Universal-Setup-Parent</name>
+    	<url>http://ess3.net/</url>
+
+	<licenses>
+		<license>
+			<name>GPLv3</name>
+			<url>http://www.gnu.org/copyleft/gpl.html</url>
+		</license>
+	</licenses>
+
+
+
+<ciManagement>
+		<system>TeamCity</system>
+		<url>http://ci.ess3.net/</url>
+	</ciManagement>
+
+	<repositories>
+		<repository>
+			<id>ess-repo</id>
+			<url>http://repo.ess3.net/content/groups/public</url>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>essdev</id>
+			<url>http://repo.ess3.net/content/repositories/essdev</url>
+		</snapshotRepository>
+		<repository>
+			<id>essrel</id>
+			<url>http://repo.ess3.net/content/repositories/essrel</url>
+		</repository>
+	</distributionManagement>
+<description>CommandBuilder</description>
+	<modules>
+		<module>Universal-Setup-API</module>
+		<module>Universal-Setup</module>
+	</modules>
 
     <properties>
         <build.number>10</build.number>
@@ -91,45 +128,7 @@
                     <target>1.6</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.5</version>
-                <configuration>
-                    <archive>
-                        <manifestEntries>
-                            <Main-Class>com.gumjoe.universalsetup.setup</Main-Class>
-                            <Implementation-Version>${describe}</Implementation-Version>
-                        </manifestEntries>
-                    </archive>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>2.3</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <filters>
-                        <filter>
-                            <artifact>*:*</artifact>
-                            <excludes>
-                                <exclude>**/*.java</exclude>
-                                <exclude>**/*.SF</exclude>
-                                <exclude>**/*.DSA</exclude>
-                            </excludes>
-                        </filter>
-                    </filters>
-                    <minimizeJar>true</minimizeJar>
-                </configuration>
-            </plugin>
+        
         </plugins>
     </build>
 </project>
