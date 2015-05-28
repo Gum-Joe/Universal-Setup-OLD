@@ -22,6 +22,11 @@
     </properties>
 
     <dependencies>
+         <dependency>
+            <groupId>com.gumjoe</groupId>
+            <artifactId>Universal-Utils-API</artifactId>
+            <version>0.1-ALPHA-SNAPSHOT</version>
+        </dependency>       
         <dependency>
             <groupId>com.custardsource.dybdob</groupId>
             <artifactId>java-diff-utils-copy</artifactId>
