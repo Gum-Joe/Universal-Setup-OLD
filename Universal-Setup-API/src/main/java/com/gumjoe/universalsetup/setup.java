@@ -61,25 +61,29 @@ import com.gumjoe.universalutils.*;
 
 public class setup
 {
-    public static void setup( String Step, String totalSteps, String Setuptype, String FileLoc, String url, File target, File installLoc  ) throws Exception
+    public static void setup( String name, String describe, String packname, String id, String author, String Step, String totalSteps, String Setuptype, String FileLoc, String url, File target, File installLoc  ) throws Exception
     {
         System.out.println( version.name + " " + version.versionnumber + "-" + version.versiontype + "-" + version.realesetype );
-        System.out.println( "                         " );
+        System.out.println( "                                                                                                 " );
         
         System.out.println( "[INFO]  Setup is starting..." );
         System.out.println( "                         " );
-        System.out.println( "[INFO]  Running setup step " + Step + " of " + totalSteps );
+        System.out.println( "[INFO]  Running setup step " + Step + " of " + totalSteps + " - " + describe );
         //Starting
         //loading
 	    File info = new File("./info.json");
         if(!info.exists()){
-            run.run("export unisetname=app.null");
             System.out.println("[ERROR] Could not find info.json, using specified options:");
             System.out.println("[INFO]  >> type: " + Setuptype);
             System.out.println("[INFO]  >> Files Loacted on: " + FileLoc);
             System.out.println("[INFO]  >> Files being downloaded from: " + url);
             System.out.println("[INFO]  >> Files being saved to: " + target);
             System.out.println("[INFO]  Setting up Universal-Setup app.null project... >>");
+            System.out.println("[INFO]  << name: " + name +".null" );
+            System.out.println("[INFO]  << description: " + describe );
+            System.out.println("[INFO]  << package: " + packname );
+            System.out.println("[INFO]  << id: " + id );
+            System.out.println("[INFO]  << author: " + author );
             System.out.println("[INFO]  << setup type: " + Setuptype + " , files located @ " + url );
             if(Setuptype=="clone"){
                // Construction: "setup, git, url, target"

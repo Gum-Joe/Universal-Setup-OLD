@@ -1,6 +1,7 @@
 com\gumjoe\universalsetup\prompt.class
-com\gumjoe\universalsetup\commandRunner.class
 com\gumjoe\universalsetup\install.class
 com\gumjoe\universalsetup\setup.class
+com\gumjoe\universalsetup\subSetup.class
 com\gumjoe\universalsetup\version.class
 com\gumjoe\universalsetup\compile.class
+com\gumjoe\universalsetup\commandRunner.class
