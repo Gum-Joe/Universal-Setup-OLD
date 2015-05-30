@@ -58,34 +58,45 @@ import org.eclipse.jgit.api.ResetCommand;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.revwalk.RevCommit;
 import com.gumjoe.universalutils.*;
+import com.gumjoe.universalsetup.*;
 
 public class setup
 {
     public static void main( String[] args ) throws Exception
     {
-        System.out.println( "Welcome to UniversalSetup" + version.versionnumber + "-" + version.versiontype + "-" + version.realesetype );
-        System.out.println( "Running version: " + version.versionnumber + "-" + version.versiontype + "-" + version.realesetype + " on " + System.getProperty( "os.name" ) );
+
+        System.out.println( "                                                                                                 " );
+        System.out.println( "[INFO]  Hello and welcome to universal-setup" );
+        System.out.println( "[INFO]  Running Version: " + version.name + " " + version.versionnumber + "-" + version.versiontype + "-" + version.realesetype );
+        System.out.println( "[INFO]  Setup is starting..." );
+        System.out.println( "                         " );
         //Starting
         //loading
-        System.out.println( "[INFO] Checking out what we need to do..." );
-	    File info = new File("./info.json");
+	    File info = new File("./setup.properties");
         if(!info.exists()){
-            System.out.println("[SOLVEABLE_ERROR] Could not find info.json, using default install");
-        } else {
-            run.run("Setup.sh");
-            System.exit(0);
-        }
-        File src = new File("./src");
-        if(!src.exists()){
-            System.out.println("[COMPILE_INFO] Compiling and installing app to local dir");
-            compile.compile();
-        } else {
-            System.out.println("[INSTALL_INFO] Installing to local dir ./app");
-            install.install();
+            System.out.println("[ERROR] Could not find a setup.properties in this directory!");
+            System.out.println("[INFO]  Create a setup.properties now? (y/n)");
+            Scanner userInputScanner = new Scanner(System.in);
+            String create = userInputScanner.nextLine();
+            Process process;
+            System.out.println(create);
+            
+                 createprop.create();
+            // Saved for later
+           //  System.out.println("[INFO]  >> type: " + Setuptype);
+            // System.out.println("[INFO]  >> Files Loacted on: " + FileLoc);
+            // System.out.println("[INFO]  >> Files being downloaded from: " + url);
+            // System.out.println("[INFO]  >> Files being saved to: " + target);
+            // System.out.println("[INFO]  Setting up Universal-Setup app.null project... >>");
+            // System.out.println("[INFO]  << name: " + name +".null" );
+            // System.out.println("[INFO]  << description: " + describe );
+            // System.out.println("[INFO]  << package: " + packname );
+            // System.out.println("[INFO]  << id: " + id );
+            // System.out.println("[INFO]  << author: " + author );
+            // System.out.println("[INFO]  << setup type: " + Setuptype + " , files located @ " + url );
+            } 
         }
     
-}
-             
 }
 
 

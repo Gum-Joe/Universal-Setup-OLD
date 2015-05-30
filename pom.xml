@@ -32,16 +32,15 @@
 		</repository>
 	</repositories>
 
-	<distributionManagement>
-		<snapshotRepository>
-			<id>essdev</id>
-			<url>http://repo.ess3.net/content/repositories/essdev</url>
-		</snapshotRepository>
-		<repository>
-			<id>essrel</id>
-			<url>http://repo.ess3.net/content/repositories/essrel</url>
-		</repository>
-	</distributionManagement>
+<distributionManagement>
+    <repository>
+        <id>internal.repo</id>
+        <name>Temporary Staging Repository</name>
+        <url>file://${project.build.directory}/mvn-repo</url>
+    </repository>
+</distributionManagement>
+
+
 <description>CommandBuilder</description>
 	<modules>
 		<module>Universal-Setup-API</module>
@@ -103,6 +102,13 @@
     <build>
         <finalName>${project.name}</finalName>
         <plugins>
+            <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.8.1</version>
+        <configuration>
+            <altDeploymentRepository>internal.repo::default::file://c/Users/hp1/Desktop/Projects/mvn-repo</altDeploymentRepository>
+        </configuration>
+    </plugin>
             <plugin>
                 <groupId>net.md-5</groupId>
                 <artifactId>scriptus</artifactId>

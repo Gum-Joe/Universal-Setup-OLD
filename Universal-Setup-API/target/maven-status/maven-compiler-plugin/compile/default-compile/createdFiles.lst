@@ -1,7 +1,7 @@
-com\gumjoe\universalsetup\prompt.class
-com\gumjoe\universalsetup\install.class
-com\gumjoe\universalsetup\setup.class
-com\gumjoe\universalsetup\subSetup.class
-com\gumjoe\universalsetup\version.class
-com\gumjoe\universalsetup\compile.class
-com\gumjoe\universalsetup\commandRunner.class
+com\gumjoe\universalsetupapi\version.class
+com\gumjoe\universalsetupapi\commandRunner.class
+com\gumjoe\universalsetupapi\prompt.class
+com\gumjoe\universalsetupapi\compile.class
+com\gumjoe\universalsetupapi\subSetup.class
+com\gumjoe\universalsetupapi\install.class
+com\gumjoe\universalsetupapi\setup.class

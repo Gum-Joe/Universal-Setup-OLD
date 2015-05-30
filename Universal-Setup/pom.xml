@@ -12,7 +12,7 @@
     <description></description>
 
 <parent>
-            <groupId>com.gumjoe</groupId>
+                <groupId>com.gumjoe</groupId>
     <artifactId>Universal-Setup-Parent</artifactId>
     <version>0.1-ALPHA-SNAPSHOT</version>
         </parent>
@@ -20,13 +20,20 @@
         <build.number>10</build.number>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <distributionManagement>
+    <repository>
+        <id>internal.repo</id>
+        <name>Temporary Staging Repository</name>
+        <url>file://${project.build.directory}/mvn-repo</url>
+    </repository>
+</distributionManagement>
 
     <dependencies>
-        <dependency>
+         <dependency>
             <groupId>com.gumjoe</groupId>
-            <artifactId>Universal-Setup-API</artifactId>
+            <artifactId>Universal-Utils-API</artifactId>
             <version>0.1-ALPHA-SNAPSHOT</version>
-        </dependency>
+        </dependency>       
         <dependency>
             <groupId>com.custardsource.dybdob</groupId>
             <artifactId>java-diff-utils-copy</artifactId>
@@ -76,6 +83,13 @@
     <build>
         <finalName>${project.name}</finalName>
         <plugins>
+                    <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.8.1</version>
+        <configuration>
+            <altDeploymentRepository>internal.repo::default::file://c/Users/hp1/Desktop/Projects/mvn-repo</altDeploymentRepository>
+        </configuration>
+    </plugin>
             <plugin>
                 <groupId>net.md-5</groupId>
                 <artifactId>scriptus</artifactId>

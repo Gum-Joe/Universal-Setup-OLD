@@ -1,4 +1,4 @@
-package com.gumjoe.universalsetupapi;
+package com.gumjoe.universalsetup;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Predicate;
@@ -59,26 +59,25 @@ import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.revwalk.RevCommit;
 import com.gumjoe.universalutils.*;
 
-public class setup
+public class subSetup
 {
-    public static void setup( String name, String describe, String packname, String id, String author, String Step, String totalSteps, String Setuptype, String FileLoc, String url, File target, File installLoc  ) throws Exception
+    public static void subSetup(  String name, String describe, String SubName, String packname, String id, String author, String Step, String totalSteps, String Setuptype, String FileLoc, String url, File target, File installLoc  ) throws Exception
     {
         System.out.println( version.name + " " + version.versionnumber + "-" + version.versiontype + "-" + version.realesetype );
-        System.out.println( "                                                                                                 " );
-        
-        System.out.println( "[INFO]  Setup is starting..." );
         System.out.println( "                         " );
-        System.out.println( "[INFO]  Running setup step " + Step + " of " + totalSteps + " - " + describe );
+        
+        System.out.println( "[INFO]  Setup is continueing..." );
+        System.out.println( "                         " );
+        System.out.println( "[INFO]  Now Running setup step " + Step + " of " + totalSteps + " for " + SubName + " - " + describe );
         //Starting
         //loading
 	    File info = new File("./info.json");
         if(!info.exists()){
-            System.out.println("[ERROR] Could not find info.json, using specified options:");
             System.out.println("[INFO]  >> type: " + Setuptype);
             System.out.println("[INFO]  >> Files Loacted on: " + FileLoc);
             System.out.println("[INFO]  >> Files being downloaded from: " + url);
             System.out.println("[INFO]  >> Files being saved to: " + target);
-            System.out.println("[INFO]  Setting up Universal-Setup app.null project... >>");
+            System.out.println("[INFO]  Continuing set up Universal-Setup app.null project... >>");
             System.out.println("[INFO]  << name: " + name +".null" );
             System.out.println("[INFO]  << description: " + describe );
             System.out.println("[INFO]  << package: " + packname );

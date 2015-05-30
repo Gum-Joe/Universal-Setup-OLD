@@ -1,4 +1,4 @@
-package com.gumjoe.universalsetup;
+package com.gumjoe.universalsetupapi;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Predicate;
