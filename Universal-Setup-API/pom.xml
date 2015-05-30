@@ -20,6 +20,16 @@
         <build.number>10</build.number>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <repositories>
+    <repository>
+        <id>github</id>
+        <url>https://raw.github.com/Gum-Joe/Maven-repo/master/</url>
+        <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+        </snapshots>
+    </repository>
+</repositories>
 
     <dependencies>
          <dependency>
