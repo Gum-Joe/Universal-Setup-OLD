@@ -113,7 +113,10 @@ public class setup
              System.out.println("[INFO]  << author: " + author );
              System.out.println("[INFO]  --------Universal-Setup-Compile-v0.1--------");
              System.out.println("[INFO]  Compiling " + name + " in " + location + " using " + method );
-             get.get("https://raw.githubusercontent.com/Gum-Joe/Universal-Setup/Gum-Joe.properties-includes/compile.sh", "compiler.sh");
+             File compiler = new File("compiler.sh");
+             if(!compiler.exists()){
+                get.get("https://raw.githubusercontent.com/Gum-Joe/Universal-Setup/Gum-Joe.properties-includes/compile.sh", "compiler.sh"); 
+             }
              run.run("sh compiler.sh " + "'" + method + "'" + "'" + location + "'");
 
             }      
