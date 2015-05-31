@@ -27,6 +27,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.io.FileInputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.security.KeyManagementException;
@@ -80,11 +81,45 @@ public class setup
             String create = userInputScanner.nextLine();
             Process process;
             System.out.println(create);
+            if(create.equals("y")){
+               createprop.create(); 
+            }
+
+            }
+            Properties setup = new Properties();
+            FileInputStream getprop = new FileInputStream("setup.properties");
+            setup.load(getprop);
+            String temp1[];
+            String temp2[];
+            String name = setup.getProperty("name");
+            String author = setup.getProperty("author");
+            String groupid = setup.getProperty("groupid");
+            String pack = setup.getProperty("package");
+            String language = setup.getProperty("language");
+            String type = setup.getProperty("type");
+            String method = setup.getProperty("method");
+            String location = setup.getProperty("location");
+            String descr = setup.getProperty("decription");  
+               
+            if(type.equals("compile")){
+             System.out.println("[INFO]  Compileing Universal-Setup app.null project... >>");
             
-                 createprop.create();
+             System.out.println("[INFO]  << name: " + name +".null" );
+             System.out.println("[INFO]  << type: " + type);
+             System.out.println("[INFO]  << Files to compile at: " + location);
+             System.out.println("[INFO]  << description: " + descr );
+             System.out.println("[INFO]  << package: " + pack );
+             System.out.println("[INFO]  << id: " + groupid );
+             System.out.println("[INFO]  << author: " + author );
+             System.out.println("[INFO]  --------Universal-Setup-Compile-v0.1--------");
+             System.out.println("[INFO]  Compiling " + name + " in " + location + " using " + method );
+             run.run("sh compile.sh " + "'" + method + "'" + "'" + location + "'");
+
+            }      
+    
             // Saved for later
-           //  System.out.println("[INFO]  >> type: " + Setuptype);
-            // System.out.println("[INFO]  >> Files Loacted on: " + FileLoc);
+           //  System.out.println("[INFO]  >> type: " + type);
+            // System.out.println("[INFO]  >> Files Loacted at: " + location);
             // System.out.println("[INFO]  >> Files being downloaded from: " + url);
             // System.out.println("[INFO]  >> Files being saved to: " + target);
             // System.out.println("[INFO]  Setting up Universal-Setup app.null project... >>");
@@ -93,8 +128,7 @@ public class setup
             // System.out.println("[INFO]  << package: " + packname );
             // System.out.println("[INFO]  << id: " + id );
             // System.out.println("[INFO]  << author: " + author );
-            // System.out.println("[INFO]  << setup type: " + Setuptype + " , files located @ " + url );
-            } 
+            // System.out.println("[INFO]  << setup type: " + Setuptype + " , files located @ " + url ); 
         }
     
 }
