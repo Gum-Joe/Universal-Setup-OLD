@@ -102,9 +102,9 @@ public class setup
             String descr = setup.getProperty("decription");  
                
             if(type.equals("compile")){
-             System.out.println("[INFO]  Compileing Universal-Setup app.null project... >>");
+             System.out.println("[INFO]  Compileing Universal-Setup app." + language + " project... >>");
             
-             System.out.println("[INFO]  << name: " + name +".null" );
+             System.out.println("[INFO]  << name: " + name +"." + language );
              System.out.println("[INFO]  << type: " + type);
              System.out.println("[INFO]  << Files to compile at: " + location);
              System.out.println("[INFO]  << description: " + descr );
