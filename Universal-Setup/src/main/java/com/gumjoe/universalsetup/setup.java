@@ -113,6 +113,7 @@ public class setup
              System.out.println("[INFO]  << author: " + author );
              System.out.println("[INFO]  --------Universal-Setup-Compile-v0.1--------");
              System.out.println("[INFO]  Compiling " + name + " in " + location + " using " + method );
+             get.get("https://", "compiler.sh")
              run.run("sh compile.sh " + "'" + method + "'" + "'" + location + "'");
 
             }      
