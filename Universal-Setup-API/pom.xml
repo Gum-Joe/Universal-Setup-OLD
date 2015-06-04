@@ -20,7 +20,7 @@
         <build.number>10</build.number>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-<<<<<<< HEAD
+
     <repositories>
     <repository>
         <id>github</id>
@@ -31,7 +31,7 @@
         </snapshots>
     </repository>
 </repositories>
-=======
+
     <distributionManagement>
     <repository>
         <id>internal.repo</id>
@@ -39,7 +39,7 @@
         <url>file://${project.build.directory}/mvn-repo</url>
     </repository>
 </distributionManagement>
->>>>>>> Gum-Joe.properties-includes
+
 
     <dependencies>
          <dependency>
