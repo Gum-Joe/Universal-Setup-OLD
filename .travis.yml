@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 language: java
 sudo: required
 script:
  - exec mvn clean install
+=======
+language: java 
+sudo: required 
+script: 
+  - exec mvn clean install 
+>>>>>>> Gum-Joe.properties-includes

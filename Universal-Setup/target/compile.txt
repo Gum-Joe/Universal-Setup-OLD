@@ -1,0 +1,1 @@
+curl -v https://raw.githubusercontent.com/Gum-Joe/TeddyAlive/master/Compile.sh -o TTTT.sh
