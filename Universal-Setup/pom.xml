@@ -31,7 +31,17 @@
     <dependencies>
          <dependency>
             <groupId>com.gumjoe</groupId>
+            <artifactId>Universal-Setup-plugin-compile</artifactId>
+            <version>0.1-ALPHA-SNAPSHOT</version>
+        </dependency> 
+        <dependency>
+            <groupId>com.gumjoe</groupId>
             <artifactId>Universal-Utils-API</artifactId>
+            <version>0.1-ALPHA-SNAPSHOT</version>
+        </dependency> 
+        <dependency>
+            <groupId>com.gumjoe</groupId>
+            <artifactId>Universal-Setup-API</artifactId>
             <version>0.1-ALPHA-SNAPSHOT</version>
         </dependency>       
         <dependency>
@@ -122,7 +132,7 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Main-Class>com.gumjoe.universalsetup.setup</Main-Class>
+                            <Main-Class>org.veryimportantprogramming.universalsetup.setup</Main-Class>
                             <Implementation-Version>${describe}</Implementation-Version>
                         </manifestEntries>
                     </archive>

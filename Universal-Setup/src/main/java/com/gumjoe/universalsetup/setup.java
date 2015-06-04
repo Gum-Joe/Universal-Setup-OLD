@@ -1,4 +1,4 @@
-package com.gumjoe.universalsetup;
+package org.veryimportantprogramming.universalsetup;
 
 import com.google.common.base.Charsets;
 import com.google.common.base.Predicate;
@@ -58,8 +58,9 @@ import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.ResetCommand;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.revwalk.RevCommit;
-import com.gumjoe.universalutils.*;
-import com.gumjoe.universalsetup.*;
+import org.veryimportantprogramming.universalutils.*;
+import org.veryimportantprogramming.universalsetup.*;
+import org.veryimportantprogramming.universalsetup.plugins.*;
 
 public class setup
 {
@@ -111,13 +112,7 @@ public class setup
              System.out.println("[INFO]  << package: " + pack );
              System.out.println("[INFO]  << id: " + groupid );
              System.out.println("[INFO]  << author: " + author );
-             System.out.println("[INFO]  --------Universal-Setup-Compile-v0.1--------");
-             System.out.println("[INFO]  Compiling " + name + " in " + location + " using " + method );
-             File compiler = new File("compiler.sh");
-             if(!compiler.exists()){
-                get.get("https://raw.githubusercontent.com/Gum-Joe/Universal-Setup/Gum-Joe.properties-includes/compile.sh", "compiler.sh"); 
-             }
-             run.run("sh compiler.sh " + "'" + method + "'" + "'" + location + "'");
+             org.veryimportantprogramming.universalsetup.plugins.compile.compile(method, location, name);
 
             }      
     

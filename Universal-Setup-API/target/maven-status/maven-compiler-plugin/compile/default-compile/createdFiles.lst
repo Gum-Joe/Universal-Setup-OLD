@@ -1,7 +1,7 @@
-com\gumjoe\universalsetupapi\version.class
-com\gumjoe\universalsetupapi\commandRunner.class
-com\gumjoe\universalsetupapi\prompt.class
-com\gumjoe\universalsetupapi\compile.class
-com\gumjoe\universalsetupapi\subSetup.class
-com\gumjoe\universalsetupapi\install.class
-com\gumjoe\universalsetupapi\setup.class
+org\veryimportantprogramming\universalsetupapi\compile.class
+org\veryimportantprogramming\universalsetupapi\setup.class
+org\veryimportantprogramming\universalsetupapi\install.class
+org\veryimportantprogramming\universalsetupapi\commandRunner.class
+org\veryimportantprogramming\universalsetupapi\prompt.class
+org\veryimportantprogramming\universalsetupapi\version.class
+org\veryimportantprogramming\universalsetupapi\subSetup.class

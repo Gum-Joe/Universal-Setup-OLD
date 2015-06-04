@@ -50,7 +50,7 @@
         <configuration>
           <archive>
             <manifestEntries>
-              <Main-Class>com.gumjoe.universalsetup.setup</Main-Class>
+              <Main-Class>org.veryimportantprogramming.universalsetup.setup</Main-Class>
               <Implementation-Version>${describe}</Implementation-Version>
             </manifestEntries>
           </archive>

@@ -53,6 +53,7 @@
 	<modules>
 		<module>Universal-Setup-API</module>
 		<module>Universal-Setup</module>
+		<module>Universal-Setup-plugins</module>
 	</modules>
 
     <properties>
