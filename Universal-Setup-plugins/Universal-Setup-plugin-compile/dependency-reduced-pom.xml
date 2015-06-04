@@ -6,7 +6,7 @@
     <version>0.1-ALPHA-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.gumjoe</groupId>
+  <groupId>org.vip</groupId>
   <artifactId>Universal-Setup-plugin-compile</artifactId>
   <name>Universal-Setup-plugin-compile</name>
   <version>0.1-ALPHA-SNAPSHOT</version>
