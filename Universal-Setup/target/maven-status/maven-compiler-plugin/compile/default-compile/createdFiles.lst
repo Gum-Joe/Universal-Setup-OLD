@@ -1,8 +1,5 @@
-org\veryimportantprogramming\universalsetup\commandRunner.class
-org\veryimportantprogramming\universalsetup\createprop.class
-org\veryimportantprogramming\universalsetup\version.class
-org\veryimportantprogramming\universalsetup\setup.class
 org\veryimportantprogramming\universalsetup\install.class
 org\veryimportantprogramming\universalsetup\compile.class
 org\veryimportantprogramming\universalsetup\prompt.class
-org\veryimportantprogramming\universalsetup\subSetup.class
+org\veryimportantprogramming\universalsetup\commandRunner.class
+org\veryimportantprogramming\universalsetup\version.class

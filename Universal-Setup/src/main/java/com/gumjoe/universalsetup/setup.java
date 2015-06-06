@@ -58,9 +58,15 @@ import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.ResetCommand;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.revwalk.RevCommit;
+import java.util.List;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.JDOMException;
+import org.jdom.input.SAXBuilder;
 import org.veryimportantprogramming.universalutils.*;
 import org.veryimportantprogramming.universalsetup.*;
 import org.veryimportantprogramming.universalsetup.plugins.*;
+
 
 public class setup
 {
@@ -87,6 +93,25 @@ public class setup
             }
 
             }
+            SAXBuilder builder = new SAXBuilder();
+	        File xmlFile = new File("setup.xml");
+            Document document = (Document) builder.build(xmlFile);
+		    Element rootNode = document.getRootElement();
+            
+            List properties = rootNode.getChildren("projectproperties");
+            List build = rootNode.getChildren("build");
+           
+            int name = properties.get("name");
+            
+            int author = properties.get("author");
+            
+            int groupid = properties.get("groupid");
+            
+            int pack = properties.get("package");
+            
+            System.out.println(name);
+            // old
+            /*
             Properties setup = new Properties();
             FileInputStream getprop = new FileInputStream("setup.properties");
             setup.load(getprop);
@@ -100,21 +125,8 @@ public class setup
             String type = setup.getProperty("type");
             String method = setup.getProperty("method");
             String location = setup.getProperty("location");
-            String descr = setup.getProperty("decription");  
-               
-            if(type.equals("compile")){
-             System.out.println("[INFO]  Compileing Universal-Setup app." + language + " project... >>");
-            
-             System.out.println("[INFO]  << name: " + name +"." + language );
-             System.out.println("[INFO]  << type: " + type);
-             System.out.println("[INFO]  << Files to compile at: " + location);
-             System.out.println("[INFO]  << description: " + descr );
-             System.out.println("[INFO]  << package: " + pack );
-             System.out.println("[INFO]  << id: " + groupid );
-             System.out.println("[INFO]  << author: " + author );
-             org.veryimportantprogramming.universalsetup.plugins.compile.compile(method, location, name);
-
-            }      
+            String descr = setup.getProperty("decription");
+            **/       
     
             // Saved for later
            //  System.out.println("[INFO]  >> type: " + type);

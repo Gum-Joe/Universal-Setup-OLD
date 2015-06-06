@@ -33,6 +33,11 @@
             <groupId>org.vip</groupId>
             <artifactId>Universal-Setup-plugin-compile</artifactId>
             <version>0.1-ALPHA-SNAPSHOT</version>
+        </dependency>
+         <dependency>
+	       <groupId>org.jdom</groupId>
+	       <artifactId>jdom</artifactId>
+	       <version>1.1</version>
         </dependency> 
         <dependency>
             <groupId>org.vip</groupId>
