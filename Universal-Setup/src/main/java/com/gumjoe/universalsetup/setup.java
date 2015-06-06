@@ -58,11 +58,13 @@ import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.ResetCommand;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.revwalk.RevCommit;
-import java.util.List;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
+import java.util.List;
+import org.apache.xerces.parsers.SAXParser;
+import org.xml.sax.*;
 import org.veryimportantprogramming.universalutils.*;
 import org.veryimportantprogramming.universalsetup.*;
 import org.veryimportantprogramming.universalsetup.plugins.*;
@@ -100,16 +102,18 @@ public class setup
             
             List properties = rootNode.getChildren("projectproperties");
             List build = rootNode.getChildren("build");
-           
-            int name = properties.get("name");
+for (int i = 0; i < properties.size(); i++) {
+ 
+		   Element node = (Element) properties.get(i);
+ 
+		   System.out.println("First Name : " + node.getChildText("name"));
+		   System.out.println("Last Name : " + node.getChildText("author"));
+		   System.out.println("Nick Name : " + node.getChildText("groupid"));
+		   System.out.println("Salary : " + node.getChildText("package"));
+ 
+		}
+
             
-            int author = properties.get("author");
-            
-            int groupid = properties.get("groupid");
-            
-            int pack = properties.get("package");
-            
-            System.out.println(name);
             // old
             /*
             Properties setup = new Properties();
