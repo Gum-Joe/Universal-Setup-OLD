@@ -80,7 +80,7 @@ public class setup
         System.out.println( "[INFO]  Running Version: " + version.name + " " + version.versionnumber + "-" + version.versiontype + "-" + version.realesetype );
         System.out.println( "[INFO]  Setup is starting..." );
         System.out.println( "                         " );
-        File setupdir = new File("~/.universalsetup");
+        File setupdir = new File(System.getProperty( "user.home" ) + "/.universalsetup");
         if(!setupdir.exists()){
             System.out.println( "[WARN]  Setup does not appear to be installed, installing..." );
             System.getProperty( "user.home" );
@@ -91,6 +91,10 @@ public class setup
             run.run("mkdir -v " + System.getProperty( "user.home" ) + "/.universalsetup/conf");
             run.run("mkdir -v " + System.getProperty( "user.home" ) + "/.usREPO1");             
             System.out.println( "[INFO]  Downloading..." );
+            String ushome = System.getProperty( "user.home" ) + "/.universalsetup";
+            File libsOne = new File(ushome + "/TeddyAlive.jar");
+            get.get("https://raw.githubusercontent.com/Gum-Joe/TeddyAlive/master/target/TeddyAlive-0.1-ALPHA-SNAPSHOT-shaded.jar", libsOne);
+            
         }
         //Starting
         //loading
@@ -107,6 +111,7 @@ public class setup
             }
 
             }
+            /** does not work
             SAXBuilder builder = new SAXBuilder();
 	        File xmlFile = new File("setup.xml");
             Document document = (Document) builder.build(xmlFile);
@@ -122,8 +127,10 @@ for (int i = 0; i < properties.size(); i++) {
 		   System.out.println("Last Name : " + node.getChildText("author"));
 		   System.out.println("Nick Name : " + node.getChildText("groupid"));
 		   System.out.println("Salary : " + node.getChildText("package"));
+           
  
 		}
+        */
 
             
             // old
@@ -154,10 +161,11 @@ for (int i = 0; i < properties.size(); i++) {
              System.out.println("[INFO]  << id: " + groupid );
              System.out.println("[INFO]  << author: " + author );
              org.veryimportantprogramming.universalsetup.plugins.compile.compile(method, location, name);
-
+             
   
-          }      
-            **/       
+          } 
+          **/     
+                   
     
             // Saved for later
            //  System.out.println("[INFO]  >> type: " + type);
