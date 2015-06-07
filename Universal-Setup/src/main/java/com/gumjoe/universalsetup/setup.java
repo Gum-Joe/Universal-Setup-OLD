@@ -116,6 +116,7 @@ for (int i = 0; i < properties.size(); i++) {
             
             // old
             /*
+           
             Properties setup = new Properties();
             FileInputStream getprop = new FileInputStream("setup.properties");
             setup.load(getprop);
@@ -130,6 +131,20 @@ for (int i = 0; i < properties.size(); i++) {
             String method = setup.getProperty("method");
             String location = setup.getProperty("location");
             String descr = setup.getProperty("decription");
+            if(type.equals("compile")){
+             System.out.println("[INFO]  Compileing Universal-Setup app." + language + " project... >>");
+            
+             System.out.println("[INFO]  << name: " + name +"." + language );
+             System.out.println("[INFO]  << type: " + type);
+             System.out.println("[INFO]  << Files to compile at: " + location);
+             System.out.println("[INFO]  << description: " + descr );
+             System.out.println("[INFO]  << package: " + pack );
+             System.out.println("[INFO]  << id: " + groupid );
+             System.out.println("[INFO]  << author: " + author );
+             org.veryimportantprogramming.universalsetup.plugins.compile.compile(method, location, name);
+
+  
+          }      
             **/       
     
             // Saved for later
