@@ -58,20 +58,44 @@ import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.ResetCommand;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.revwalk.RevCommit;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.JDOMException;
+import org.jdom.input.SAXBuilder;
+import java.util.List;
+import org.apache.xerces.parsers.SAXParser;
+import org.xml.sax.*;
 import org.veryimportantprogramming.universalutils.*;
 import org.veryimportantprogramming.universalsetup.*;
 import org.veryimportantprogramming.universalsetup.plugins.*;
+
 
 public class setup
 {
     public static void main( String[] args ) throws Exception
     {
 
-        System.out.println( "                                                                                                 " );
+        System.out.println( "                                                                                                 " );               
         System.out.println( "[INFO]  Hello and welcome to universal-setup" );
         System.out.println( "[INFO]  Running Version: " + version.name + " " + version.versionnumber + "-" + version.versiontype + "-" + version.realesetype );
         System.out.println( "[INFO]  Setup is starting..." );
         System.out.println( "                         " );
+        File setupdir = new File(System.getProperty( "user.home" ) + "/.universalsetup");
+        if(!setupdir.exists()){
+            System.out.println( "[WARN]  Setup does not appear to be installed, installing..." );
+            System.getProperty( "user.home" );
+            run.run("mkdir -v " + System.getProperty( "user.home" ) + "/.universalsetup");
+            run.run("mkdir -v " + System.getProperty( "user.home" ) + "/.universalsetup/bin");
+            run.run("mkdir -v " + System.getProperty( "user.home" ) + "/.universalsetup/libs");
+            run.run("mkdir -v " + System.getProperty( "user.home" ) + "/.universalsetup/plugins");
+            run.run("mkdir -v " + System.getProperty( "user.home" ) + "/.universalsetup/conf");
+            run.run("mkdir -v " + System.getProperty( "user.home" ) + "/.usREPO1");             
+            System.out.println( "[INFO]  Downloading..." );
+            String ushome = System.getProperty( "user.home" ) + "/.universalsetup";
+            File libsOne = new File(ushome + "/TeddyAlive.jar");
+            get.get("https://raw.githubusercontent.com/Gum-Joe/TeddyAlive/master/target/TeddyAlive-0.1-ALPHA-SNAPSHOT-shaded.jar", libsOne);
+            
+        }
         //Starting
         //loading
 	    File info = new File("./setup.properties");
@@ -87,6 +111,31 @@ public class setup
             }
 
             }
+            /** does not work
+            SAXBuilder builder = new SAXBuilder();
+	        File xmlFile = new File("setup.xml");
+            Document document = (Document) builder.build(xmlFile);
+		    Element rootNode = document.getRootElement();
+            
+            List properties = rootNode.getChildren("projectproperties");
+            List build = rootNode.getChildren("build");
+for (int i = 0; i < properties.size(); i++) {
+ 
+		   Element node = (Element) properties.get(i);
+ 
+		   System.out.println("First Name : " + node.getChildText("name"));
+		   System.out.println("Last Name : " + node.getChildText("author"));
+		   System.out.println("Nick Name : " + node.getChildText("groupid"));
+		   System.out.println("Salary : " + node.getChildText("package"));
+           
+ 
+		}
+        */
+
+            
+            // old
+            /*
+           
             Properties setup = new Properties();
             FileInputStream getprop = new FileInputStream("setup.properties");
             setup.load(getprop);
@@ -100,8 +149,7 @@ public class setup
             String type = setup.getProperty("type");
             String method = setup.getProperty("method");
             String location = setup.getProperty("location");
-            String descr = setup.getProperty("decription");  
-               
+            String descr = setup.getProperty("decription");
             if(type.equals("compile")){
              System.out.println("[INFO]  Compileing Universal-Setup app." + language + " project... >>");
             
@@ -113,8 +161,11 @@ public class setup
              System.out.println("[INFO]  << id: " + groupid );
              System.out.println("[INFO]  << author: " + author );
              org.veryimportantprogramming.universalsetup.plugins.compile.compile(method, location, name);
-
-            }      
+             
+  
+          } 
+          **/     
+                   
     
             // Saved for later
            //  System.out.println("[INFO]  >> type: " + type);

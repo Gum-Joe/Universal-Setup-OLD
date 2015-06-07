@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project>
+	<projectproperties>
+		<name>TeddyAlive</name>
+		<author>Gum-Joe</author>
+		<groupid>com.gumjoe</groupid>
+		<package>com.gumjoe.teddyaliv</package>
+	</projectproperties>
+	<build>
+		<language>java</language>
+		<type>compile</type>
+		<methods>
+			<method>mvn clean install</method>
+		</methods>
+		<loaction>root</location>
+	</build>
+</project>
