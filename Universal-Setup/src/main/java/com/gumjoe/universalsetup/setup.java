@@ -75,11 +75,23 @@ public class setup
     public static void main( String[] args ) throws Exception
     {
 
-        System.out.println( "                                                                                                 " );
+        System.out.println( "                                                                                                 " );               
         System.out.println( "[INFO]  Hello and welcome to universal-setup" );
         System.out.println( "[INFO]  Running Version: " + version.name + " " + version.versionnumber + "-" + version.versiontype + "-" + version.realesetype );
         System.out.println( "[INFO]  Setup is starting..." );
         System.out.println( "                         " );
+        File setupdir = new File("~/.universalsetup");
+        if(!setupdir.exists()){
+            System.out.println( "[WARN]  Setup does not appear to be installed, installing..." );
+            System.getProperty( "user.home" );
+            run.run("mkdir -v " + System.getProperty( "user.home" ) + "/.universalsetup");
+            run.run("mkdir -v " + System.getProperty( "user.home" ) + "/.universalsetup/bin");
+            run.run("mkdir -v " + System.getProperty( "user.home" ) + "/.universalsetup/libs");
+            run.run("mkdir -v " + System.getProperty( "user.home" ) + "/.universalsetup/plugins");
+            run.run("mkdir -v " + System.getProperty( "user.home" ) + "/.universalsetup/conf");
+            run.run("mkdir -v " + System.getProperty( "user.home" ) + "/.usREPO1");             
+            System.out.println( "[INFO]  Downloading..." );
+        }
         //Starting
         //loading
 	    File info = new File("./setup.properties");
